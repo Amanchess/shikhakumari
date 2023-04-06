@@ -1,79 +1,46 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet">
-
-    <style>
-        html, body {
-            margin:0px;
-            height:100%;
-            text-shadow: 2px 3px 2px #DDA0DD;
-            font-family: 'blackletter', cursive;
-        }
-        
-        .bg_heart {
-            position:relative;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            overflow:hidden;
-            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7q_nnnxFkvfZ9-b7kViqX4nrBTJmnkmEzpXjZMagoiA&usqp=CAU&ec=48665701");
-            background-size:100% 100%;
-            z-index:-1;
-        }
-
-        .container {
-            position:absolute;
-            top:0;
-            left:0;
-            height:100%;
-            width:100%;
-            text-align:center;
-            color:white;
-            font-family: 'blackletter', cursive;
-        }
-
-        #text1 {
-            margin-top: 30%;
-            font-size: 2em;
-        }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<title>Display Images One by One</title>
 </head>
+<body>
+	<h1>Display Images One by One</h1>
+	<div>
+		<img id="image" src="" style="max-width: 100%; max-height: 100%;">
+	</div>
+	<div>
+		<label for="imageUrl">Image URL:</label>
+		<input type="text" id="imageUrl" name="imageUrl">
+		<button onclick="displayImage()">Display Image</button>
+	</div>
 
-<body id="x" onclick="play()">
-    <audio id="a" src="https://www.dropbox.com/s/e6qluuzfyy17br9/Pal%20%28female%29%20Jalebi%20320%20Kbps.mp3?dl=1" autoplay loop></audio>
+	<script>
+		var imageUrls = [
+			"https://example.com/image1.jpg",
+			"https://example.com/image2.jpg",
+			"https://example.com/image3.jpg",
+			"https://example.com/image4.jpg",
+			"https://example.com/image5.jpg"
+		];
+		var currentImageIndex = 0;
 
-    <div class="bg_heart"></div>
-
-    <div class="container">
-        <h2 id="text1"></h2>
-    </div>
-
-    <script>
-        var name = "Shikha 🐼";
-        function play() {
-            document.getElementById('a').play();
-        }
-
-        var i = 0;
-        var txt1 = "Hey  " + name + ".....!  <<               Just wanted to confront something important today. <<<                I wanted to tell you this since a long time but😓...!                                                                           ...";
-        
-        function typeWriter() {
-            if (i < txt1.length) {
-                document.getElementById("text1").innerHTML += txt1.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        
-        typeWriter();
-    </script>
+		function displayImage() {
+			var imageUrlInput = document.getElementById("imageUrl");
+			var image = document.getElementById("image");
+			var imageUrl = imageUrlInput.value;
+			if (imageUrl) {
+				image.src = imageUrl;
+				currentImageIndex = -1;
+			} else {
+				currentImageIndex++;
+				if (currentImageIndex >= imageUrls.length) {
+					currentImageIndex = 0;
+				}
+				image.src = imageUrls[currentImageIndex];
+				imageUrlInput.value = "";
+			}
+		}
+	</script>
 </body>
 </html>
 
