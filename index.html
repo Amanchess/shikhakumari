@@ -1,11 +1,37 @@
-apology_text = "I'm sorry for the mistake I made\nI never intended to cause any harm\nPlease forgive me for my actions"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Apology Message</title>
+    <style>
+      body {
+        font-family: cursive;
+        font-size: 20px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="apology">I'm sorry for the mistake I made<br>I never intended to cause any harm<br>Please forgive me for my actions</p>
 
-# Split the text into lines
-lines = apology_text.split('\n')
+    <script>
+      // Get the text content of the apology message
+      var apologyText = document.getElementById("apology").textContent;
 
-# Print each line with a delay of 1 second
-import time
-for line in lines:
-    print(line)
-    time.sleep(1)
+      // Split the text into lines
+      var lines = apologyText.split('\n');
+
+      // Clear the text content of the apology paragraph
+      document.getElementById("apology").textContent = "";
+
+      // Display each line of the apology message with a delay of 1 second
+      var i = 0;
+      setInterval(function() {
+        if (i < lines.length) {
+          document.getElementById("apology").textContent += lines[i] + "\n";
+          i++;
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
  
