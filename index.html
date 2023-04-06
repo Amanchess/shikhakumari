@@ -1,46 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Display Images One by One</title>
+	<title>Apology Page</title>
+	<style>
+		body {
+			background-image: url('panda.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+	</style>
 </head>
 <body>
-	<h1>Display Images One by One</h1>
-	<div>
-		<img id="image" src="" style="max-width: 100%; max-height: 100%;">
-	</div>
-	<div>
-		<label for="imageUrl">Image URL:</label>
-		<input type="text" id="imageUrl" name="imageUrl">
-		<button onclick="displayImage()">Display Image</button>
-	</div>
+	<audio autoplay loop>
+		<source src="apology_music.mp3" type="audio/mpeg">
+	</audio>
 
-	<script>
-		var imageUrls = [
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRpmges4ScgBFxc-eHJ5zy6BpselbDWmUk0iKMfd9o7A&usqp=CAU&ec=48665701",
-			"https://www.google.com/search?q=panda+images&client=ms-android-vivo&prmd=isbvn&sxsrf=APwXEdc5v5eDKv7ffBBiWPluwNuSj4-cCw:1680785485668&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi4icTupZX-AhUN7zgGHYNhDl8Q_AUoAXoECAIQAQ&biw=360&bih=646&dpr=2#imgrc=FG_IhNbOlM2f6M&imgdii=-4OVJw79ruTPvM&lnspr=W10=",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxVuxiM0BdhONfnbbIQqVXnT9fTwoAYkiTw7Bqw42xvQ&usqp=CAU&ec=48665701",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtYnGCnbDeV2guTQgg4mMF-ECcL-7X9wq1ao56w5f3lA&usqp=CAU&ec=48665701",
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnQkfKUHXpUTShcKrNjWQubiRKNW6cyUgCzS-5LDrSrA&usqp=CAU&ec=48665701"
-		];
-		var currentImageIndex = 0;
-
-		function displayImage() {
-			var imageUrlInput = document.getElementById("imageUrl");
-			var image = document.getElementById("image");
-			var imageUrl = imageUrlInput.value;
-			if (imageUrl) {
-				image.src = imageUrl;
-				currentImageIndex = -1;
-			} else {
-				currentImageIndex++;
-				if (currentImageIndex >= imageUrls.length) {
-					currentImageIndex = 0;
-				}
-				image.src = imageUrls[currentImageIndex];
-				imageUrlInput.value = "";
-			}
-		}
-	</script>
+	<h1>Apology Page</h1>
+	<p>Dear [Name],</p>
+	<p>I am truly sorry for [reason for apology]. It was not my intention to [offend/hurt/upset/etc.]. Please forgive me.</p>
+	<p>Sincerely,</p>
+	<p>[Your Name]</p>
 </body>
 </html>
-
