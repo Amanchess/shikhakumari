@@ -1,152 +1,28 @@
-<html> 
- <head> 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-   <title>I</title> 
-  
- <link rel="preconnect" href="https://fonts.googleapis.com"> 
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
- <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet"> 
-      
-    <style> 
-     html,body{ 
-   margin:0px; 
-   height:100%; 
-      text-shadow: 2px 3px 2px #DDA0DD; 
- /*    font-family: 'Lobster', cursive;  */ 
- font-family: 'blackletter', cursive; 
-  } 
- .bg_heart{ 
-   position:relative; 
-   top:0; 
-   left:0; 
-   width:100%; 
-   height:100%; 
-  overflow:hidden; 
-  /* background-image:url('https://img.lovepik.com/background/20211029/medium/lovepik-lovers-cellphone-wallpaper-background-image_400335236.jpg'); */ 
-  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7q_nnnxFkvfZ9-b7kViqX4nrBTJmnkmEzpXjZMagoiA&usqp=CAU&ec=48665701"); 
-   /* background-image:url("https://i.pinimg.com/originals/51/d8/37/51d8374126446d495348b6032202126f.jpg"); */ 
-   background-size:100% 100%; 
-   z-index:-1; 
- } 
-  
- .container{ 
-   position:absolute; 
-   top:0; 
-   left:0; 
-   height:100%; 
-   width:100%; 
-   text-align:center; 
-   color:white; 
-     font-family: 'blackletter', cursive; 
- /* font-family: 'Lobster', cursive; */ 
- } 
-  
-  
- .heart{ 
-   position:absolute; 
-   top:-50%; 
-   transform:rotate(-45deg); 
-   -webkit-transform:rotate(-45deg); 
-   -moz-transform:rotate(-45deg); 
-   -m-transform:rotate(-45deg); 
- } 
- .heart:before{ 
-   position:absolute; 
-   top:-50%; 
-   left:0; 
-   display:block; 
-   content:""; 
-   width:100%; 
-   height:100%; 
-   background:inherit; 
-   border-radius:100%; 
- } 
- .heart:after{ 
-   position:absolute; 
-   top:0; 
-   right:-50%; 
-   display:block; 
-   content:""; 
-   width:100%; 
-   height:100%; 
-   background:inherit; 
-   border-radius:100%; 
- } 
-  
- @keyframes love { 
-   0%{top:110%} 
- } 
- @-webkit-keyframes love { 
-   0%{top:110%} 
- } 
- @-moz-keyframes love { 
-   0%{top:110%} 
- } 
- @-ms-keyframes love { 
-   0%{top:110%} 
- } 
-   </style> 
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
- </head> 
-  
- <body id="x" onclick="play()"> 
-    
-   <audio id="a" src="https://www.dropbox.com/s/e6qluuzfyy17br9/Pal%20%28female%29%20Jalebi%20320%20Kbps.mp3?dl=1" autoplay loop></audio> 
-  
-  
- <div class="bg_heart"> 
- </div> 
-  
- <div class="container"> 
-   
-  
- <h2 id="text1"></h2> 
-  
-  
-   </div> 
-    
-  
- <script> 
-  var name = "Shikha 🐼" 
-      
-     function play() { 
-         document.getElementById('a').play() 
-     } 
-      
- var love = setInterval(function(){ 
-   var r_num = Math.floor(Math.random() * 40) + 1; 
-     var r_size = Math.floor(Math.random() * 65) + 10; 
-     var r_left = Math.floor(Math.random() * 100) + 1; 
-     var r_bg = Math.floor(Math.random() * 25) + 100; 
-   var r_time = Math.floor(Math.random() * 5) + 5; 
-   $('.bg_heart').append("<div class='heart' style='width:"+r_size+"px;height:"+r_size+"px;left:"+r_left+"%;background:rgba(255,"+(r_bg-25)+","+r_bg+",1);-webkit-animation:love "+r_time+"s ease;-moz-animation:love "+r_time+"s ease;-ms-animation:love "+r_time+"s ease;animation:love "+r_time+"s ease'></div>"); 
-    
-   $('.bg_heart').append("<div class='heart' style='width:"+(r_size-10)+"px;height:"+(r_size-10)+"px;left:"+(r_left+r_num)+"%;background:rgba(255,"+(r_bg-25)+","+(r_bg+25)+",1);-webkit-animation:love "+(r_time+5)+"s ease;-moz-animation:love "+(r_time+5)+"s ease;-ms-animation:love "+(r_time+5)+"s ease;animation:love "+(r_time+5)+"s ease'></div>"); 
-    
-    
- },500); 
-  
- var i = 0; 
- var txt1 = "Hey  "+ name +".....!  <<               Just wanted to confront something important today. <<<                I wanted to tell you this since a long time but😓...!                                                                           > we are very good friends and I never wanted that because of this our friendship ruin so I always avoided it < But now🙇.  <<                  < I Don't know how it happened but you're someone really special to me🌺....! <<                           I don't know how but everything related to you and also the time we've spent together is really special to me 🎀...!                                                     > Everything about you is always intresting for me☺️...!                     << I am somewhat sceptical and afraid that you won't understand so I never told this but now it really started to hurt everytime😔...!                                                     > every passing day I thought that I will confront everything to you when we met next time and I tried but couldn't tell you.😓<                       I want to be with you and make you happy and see you smile for rest of my life no matter till tomorrow or maybe next 80 years really don't know.⏳                  <<I want to create beautiful memories with you and share our bond together and walk this path.👫           << So, "+ name +", can we both come together for life?                                                        > Will you give me the opportunity to be  your partner, your confidant, and your love?<       I Love You <"+ name +"❣️....! |                  <<<< I promise to provide you with all my love and happiness which I can so can we be together🐼❣️🦒 ...!"; 
- var speed = 70; 
- typeWriter(); 
- function typeWriter() { 
-   if (i < txt1.length) {         
-      if(txt1.charAt(i)=='<') 
-       document.getElementById("text1").innerHTML += '</br>' 
-     else if(txt1.charAt(i)=='>') 
-       document.getElementById("text1").innerHTML = '' 
-     else if(txt1.charAt(i)=='|') 
-       { 
-         $(".bg_heart").css("background-image", "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9fraxPRpNBwpc9n6gX0YgjOu3v7VnC4l24gMqlgVfZA&usqp=CAU&ec=48665701')") 
-       } 
-     else 
-       document.getElementById("text1").innerHTML += txt1.charAt(i); 
-     i++; 
-     setTimeout(typeWriter, speed); 
-   } 
- } 
- </script> 
-   </body> 
- </html> 
-  
+from tkinter import *
+
+root = Tk()
+
+# set the title and size of the window
+root.title("Apology Message")
+root.geometry("500x500")
+
+# set the background image
+background_image = PhotoImage(file="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgmW4lS5tw9hqpQg30B32AnUdprVElan1Ra71rnQ5pYA&usqp=CAU&ec=48665701")
+background_label = Label(root, image=background_image)
+background_label.place(relwidth=1, relheight=1)
+
+# create a text box for the apology message
+message_box = Text(root, font=("Helvetica", 16), wrap=WORD)
+message_box.place(relx=0.5, rely=0.4, anchor=CENTER, relwidth=0.8, relheight=0.4)
+
+# create a function to handle the submit button
+def submit_message():
+    message = message_box.get("1.0", END)
+    # code to send the message to your friend
+    
+# create a submit button
+submit_button = Button(root, text="Submit", font=("Helvetica", 16), command=submit_message)
+submit_button.place(relx=0.5, rely=0.8, anchor=CENTER)
+
+root.mainloop()
+ 
