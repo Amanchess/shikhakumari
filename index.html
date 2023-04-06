@@ -4,31 +4,58 @@
     <title>Video with Music and Text</title>
   </head>
   <body>
-    <video controls autoplay>
-      <source src="myvideo.mp4" type="video/mp4">
-      <source src="myvideo.ogg" type="video/ogg">
-      <source src="myvideo.webm" type="video/webm">
-      <audio src="mymusic.mp3" type="audio/mpeg" autoplay></audio>
-    </video>
+    <form>
+      <label for="video-url">Video URL:</label>
+      <input type="text" id="video-url" name="video-url"><br>
+
+      <label for="music-url">Music URL:</label>
+      <input type="text" id="music-url" name="music-url"><br>
+
+      <input type="button" value="Play Video with Music and Text" onclick="playVideo()">
+    </form>
+
     <div id="text-container"></div>
+
     <script>
-      const textLines = [
-        "Line 1 of text",
-        "Line 2 of text",
-        "Line 3 of text",
-        "Line 4 of text"
-      ];
-      let currentLineIndex = 0;
-      const textContainer = document.getElementById("text-container");
-      const intervalId = setInterval(() => {
-        if (currentLineIndex < textLines.length) {
-          const currentLine = textLines[currentLineIndex];
-          textContainer.innerHTML += "<p>" + currentLine + "</p>";
-          currentLineIndex++;
-        } else {
-          clearInterval(intervalId);
-        }
-      }, 2000);
+      function playVideo() {
+        const videoUrl = document.getElementById("video-url").value;
+        const musicUrl = document.getElementById("music-url").value;
+
+        const videoElement = document.createElement("video");
+        videoElement.setAttribute("controls", "");
+        videoElement.setAttribute("autoplay", "");
+        videoElement.innerHTML = `
+          <source src="${videoUrl}" type="video/mp4">
+          <source src="${videoUrl}" type="video/ogg">
+          <source src="${videoUrl}" type="video/webm">
+        `;
+
+        const audioElement = document.createElement("audio");
+        audioElement.setAttribute("src", musicUrl);
+        audioElement.setAttribute("type", "audio/mpeg");
+        audioElement.setAttribute("autoplay", "");
+
+        const textLines = [
+          "Line 1 of text",
+          "Line 2 of text",
+          "Line 3 of text",
+          "Line 4 of text"
+        ];
+        let currentLineIndex = 0;
+        const textContainer = document.getElementById("text-container");
+        const intervalId = setInterval(() => {
+          if (currentLineIndex < textLines.length) {
+            const currentLine = textLines[currentLineIndex];
+            textContainer.innerHTML += "<p>" + currentLine + "</p>";
+            currentLineIndex++;
+          } else {
+            clearInterval(intervalId);
+          }
+        }, 2000);
+
+        document.body.appendChild(videoElement);
+        document.body.appendChild(audioElement);
+      }
     </script>
   </body>
 </html>
