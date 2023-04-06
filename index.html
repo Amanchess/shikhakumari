@@ -1,28 +1,11 @@
-from tkinter import *
+apology_text = "I'm sorry for the mistake I made\nI never intended to cause any harm\nPlease forgive me for my actions"
 
-root = Tk()
+# Split the text into lines
+lines = apology_text.split('\n')
 
-# set the title and size of the window
-root.title("Apology Message")
-root.geometry("500x500")
-
-# set the background image
-background_image = PhotoImage(file="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgmW4lS5tw9hqpQg30B32AnUdprVElan1Ra71rnQ5pYA&usqp=CAU&ec=48665701")
-background_label = Label(root, image=background_image)
-background_label.place(relwidth=1, relheight=1)
-
-# create a text box for the apology message
-message_box = Text(root, font=("Helvetica", 16), wrap=WORD)
-message_box.place(relx=0.5, rely=0.4, anchor=CENTER, relwidth=0.8, relheight=0.4)
-
-# create a function to handle the submit button
-def submit_message():
-    message = message_box.get("1.0", END)
-    # code to send the message to your friend
-    
-# create a submit button
-submit_button = Button(root, text="Submit", font=("Helvetica", 16), command=submit_message)
-submit_button.place(relx=0.5, rely=0.8, anchor=CENTER)
-
-root.mainloop()
+# Print each line with a delay of 1 second
+import time
+for line in lines:
+    print(line)
+    time.sleep(1)
  
