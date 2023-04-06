@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Video with Music and Text</title>
-  </head>
-  <body>
-    <form>
-      <label for="video-url">Video URL:</label>
-      <input type="text" id="video-url" name="video-url"><br>
-
-      <label for="music-url">Music URL:</label>
-      <input type="text" id="music-url" name="music-url"><br>
-
-      <input type="button" value="Play Video with Music and Text" onclick="playVideo()">
-    </form>
-
-    <div id="text-container"></div>
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0px;
+            height: 100%;
+            text-shadow: 2px 3px 2px #DDA0DD;
+            font-family: 'blackletter', cursive;
+        }
+        .bg_heart {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7q_nnnxFkvfZ9-b7kViqX4nrBTJmnkmEzpXjZMagoiA&usqp=CAU&ec=48665701");
+            background-size: 100% 100%;
+            z-index: -1;
+        }
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-family: 'blackletter', cursive;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body id="x" onclick="play()">
+    <audio id="a" src="https://www.dropbox.com/s/e6qluuzfyy17br9/Pal%20%28female%29%20Jalebi%20320%20Kbps.mp3?dl=1" autoplay loop></audio>
+    <div class="bg_heart"></div>
+    <div class="container">
+        <h2 id="text1"></h2>
+    </div>
     <script>
-      function playVideo() {
-        const videoUrl = document.getElementById("video-url").value;
-        const musicUrl = document.getElementById("music-url").value;
-
-        const videoElement = document.createElement("video");
-        videoElement.setAttribute("controls", "");
-        videoElement.setAttribute("autoplay", "");
-        videoElement.innerHTML = `
-          <source src="${videoUrl}" type="video/mp4">
-          <source src="${videoUrl}" type="video/ogg">
-          <source src="${videoUrl}" type="video/webm">
-        `;
-
-        const audioElement = document.createElement("audio");
-        audioElement.setAttribute("src", musicUrl);
-        audioElement.setAttribute("type", "audio/mpeg");
-        audioElement.setAttribute("autoplay", "");
-
-        const textLines = [
-          "Line 1 of text",
-          "Line 2 of text",
-          "Line 3 of text",
-          "Line 4 of text"
-        ];
-        let currentLineIndex = 0;
-        const textContainer = document.getElementById("text-container");
-        const intervalId = setInterval(() => {
-          if (currentLineIndex < textLines.length) {
-            const currentLine = textLines[currentLineIndex];
-            textContainer.innerHTML += "<p>" + currentLine + "</p>";
-            currentLineIndex++;
-          } else {
-            clearInterval(intervalId);
-          }
-        }, 2000);
-
-        document.body.appendChild(videoElement);
-        document.body.appendChild(audioElement);
-      }
+        var name = "Shikha 🐼"
+        function play() {
+            document.getElementById('a').play()
+        }
+        var i = 0;
+        var txt1 = "Hey  "+ name +".....!  <<               Just wanted to confront something important today. <<<                I wanted to tell you this since a long time but😓...!                                                                                     ...I love you ♥️";
+        var speed = 70;
+        function typeWriter() {
+            if (i < txt1.length) {
+                document.getElementById("text1").innerHTML += txt1.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        setTimeout(typeWriter, 2000);
     </script>
-  </body>
+</body>
 </html>
 
