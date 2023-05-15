@@ -1,25 +1,57 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Apology Page</title>
-	<style>
-		body {
-			background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnQkfKUHXpUTShcKrNjWQubiRKNW6cyUgCzS-5LDrSrA&usqp=CAU&ec=48665701');
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: center;
-		}
-	</style>
+<title>Hiiiiii</title>
+<style>
+p {
+text-align: center;
+font-size: 32px;
+font-family: Candara, Oswald;
+}
+img {
+display: block;
+margin: 0 auto;
+width: 25%;
+}
+</style>
 </head>
 <body>
-	<audio autoplay loop>
-		<source src="apology_music.mp3" type="audio/mpeg">
-	</audio>
+<p>Can we hang out soon?</p>
+<img src="https://media.tenor.com/zGm5acSjHCIAAAAM/cat-begging.gif">
+</body>
+<title>Botões</title>
+<style>
+#botao1 {
+position: fixed;
+top: 70%;
+left: 55%;
+transform: translate(-50%, -50%);
+}
+#botao2 {
+position: absolute;
+ left: 39%;
+  top: 68%;
+}
+</style>
+</head>
+<body>
+<button id="botao1">YES BBY!</button>
+<button id="botao2">NO</button>
+<script>
+const button2 = document.getElementById('botao2');
+let left = 40;
+button2.addEventListener('mouseover', function() {
+  if(left == 40){
+    left = 44;
+  }else{
+    left = 40;
+  }
+  this.style.left = left + '%';
+});
 
-	<h1>Apology Page</h1>
-	<p>Dear [Name],</p>
-	<p>I am truly sorry for [reason for apology]. It was not my intention to [offend/hurt/upset/etc.]. Please forgive me.</p>
-	<p>Sincerely,</p>
-	<p>[Your Name]</p>
+</script>
+<script>document.getElementById('botao1').addEventListener('click', function() {
+alert('YAYY THANK U 😍❤️');
+});
+</script>
 </body>
 </html>
